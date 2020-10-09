@@ -1,0 +1,16 @@
+.Form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.Form input {
+  margin: 10px;
+  padding-left: 10px;
+  height: 40px;
+  border-radius: 100px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}

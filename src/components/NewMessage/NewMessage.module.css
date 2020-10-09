@@ -1,0 +1,16 @@
+.NewMessage {
+  grid-column: 3 / -1;
+
+  border-top: 1px solid rgb(202, 202, 202);
+  display: flex;
+  align-items: center;
+}
+.Message {
+  width: 80%;
+  height: 20%;
+  margin-right: 20px;
+  border: none;
+  font-size: 120%;
+  top: -100px;
+  left: -200px;
+}

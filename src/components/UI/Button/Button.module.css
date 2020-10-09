@@ -1,0 +1,19 @@
+.Button {
+  width: 70px;
+  height: 30px;
+  background-color: darkgreen;
+  text-transform: uppercase;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 100px;
+  transition: 0.2s;
+}
+.Button:hover {
+  background-color: rgb(4, 165, 4);
+}
+.Button:disabled {
+  cursor: not-allowed;
+  background-color: darkgrey;
+}

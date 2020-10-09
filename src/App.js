@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Chat from "./containers/Chat/Chat";
+import Login from "./containers/Auth/Login/Login";
+import { withRouter, Switch, Route, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    let authRoutes = (
+      <Switch>
+        <Route path="/auth" component={Login} />
+        <Redirect to="/auth" />
+      </Switch>
+    );
+    if (this.props.isLoggedIn) {
+      authRoutes = (
+        <Switch>
+          <Route path="/auth" component={Login} />
+          <Route path="/" exact component={Chat} />
+          <Redirect to="/" />
+        </Switch>
+      );
+    }
+    return <div className="App">{authRoutes}</div>;
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    isLoggedIn: state.auth.user,
+  };
+};
+
+export default withRouter(connect(mapStateToProps)(App));
