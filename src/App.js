@@ -4,6 +4,7 @@ import Chat from "./containers/Chat/Chat";
 import Login from "./containers/Auth/Login/Login";
 import { withRouter, Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+require("dotenv").config();
 
 class App extends React.Component {
   render() {

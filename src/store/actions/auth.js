@@ -44,7 +44,7 @@ export const loginFail = () => {
 export const submitForm = (form) => {
   let url =
     "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" +
-    process.env.KEY;
+    process.env.REACT_APP_KEY;
   if (form.name) {
     url =
       "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" +
