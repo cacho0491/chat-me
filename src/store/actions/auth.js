@@ -43,10 +43,12 @@ export const loginFail = () => {
 
 export const submitForm = (form) => {
   let url =
-    "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDt8qWYd3CoOF1UF2hyG04M-V8vkiWpsBM";
+    "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" +
+    process.env.KEY;
   if (form.name) {
     url =
-      "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDt8qWYd3CoOF1UF2hyG04M-V8vkiWpsBM";
+      "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" +
+      process.env.KEY;
   }
   return (dispatch) => {
     dispatch(form.name ? submitFormStarted() : loginStarted());
